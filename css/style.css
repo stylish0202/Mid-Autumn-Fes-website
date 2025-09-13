@@ -1,0 +1,59 @@
+/* color palette */
+/* Background: linear-gradient(to bottom, #0a0a1f, #1a1a3d) */
+/* Navbar: #f1c40f, #fff, f1c40f, rgba(241, 196, 15, 0.1),  */
+/* Footer: #ffc107 */
+
+/* Global css */
+.mid-autumn-navbar {
+  background-color: #1a1a2e;
+}
+.mid-autumn-navbar .nav-link,
+.mid-autumn-navbar .navbar-brand {
+  color: #f1c40f;
+}
+.mid-autumn-navbar .nav-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* for the hamburger icon */
+.custom-toggler {
+  border: 2px solid #f1c40f; /* bright yellow-gold */
+  border-radius: 5px; /* optional: soft rounded corners */
+  padding: 5px 8px; /* better spacing inside */
+}
+
+.custom-toggler:hover {
+  background-color: rgba(241, 196, 15, 0.1); /* soft gold glow */
+  border-color: #fff; /* turns white on hover */
+}
+
+/* the glowing effect for the footer text */
+footer h2 {
+  animation: glowText 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 5px #ffc107;
+  }
+  to {
+    text-shadow: 0 0 20px #ffc107;
+  }
+}
+
+/* buttons */
+.btnToTop {
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

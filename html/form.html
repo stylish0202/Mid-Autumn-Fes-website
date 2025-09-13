@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap's icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- bootstrap's JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <!-- css -->
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../css/form.css" rel="stylesheet" />
+    <title>Interactive form page</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg mid-autumn-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="../images/moon1.png"
+            width="60"
+            height="60"
+            alt="logo of a moon"
+          />
+          <span>Mid-Autumn</span>
+        </a>
+        <button
+          class="navbar-toggler custom-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i aria-hidden="true" class="bi bi-list text-warning fs-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="information.html"
+                >How Cultures Celebrate</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="form.html">Share Your Memories</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- main content -->
+    <main class="container d-flex justify-content-center">
+      <div class="card shadow p-4 my-5 w-100 form-card">
+        <!-- form -->
+        <form id="feedbackForm" class="needs-validation" novalidate>
+          <h1>Share with us your Mid-Autumn Festival Experience below!</h1>
+          <p class="fs-5">
+            Have you ever celebrated the Mid-Autumn Festival? Do share your
+            memories with us!
+          </p>
+
+          <!-- Name input -->
+          <div class="mb-3 fw-bold">
+            <label class="form-label" for="nameInput">Name</label>
+            <input
+              class="form-control"
+              type="text"
+              id="nameInput"
+              placeholder="E.g. Jane Doe"
+              name="username"
+              maxlength="60"
+              required
+            />
+          </div>
+
+          <!-- Email input -->
+          <div class="mb-3 fw-bold">
+            <label class="form-label" for="emailInput">Email Address</label>
+            <input
+              class="form-control"
+              type="email"
+              id="emailInput"
+              placeholder="E.g. example@gmail.com"
+              name="emailInput"
+              required
+            />
+          </div>
+
+          <!-- region input -->
+          <fieldset class="mb-3">
+            <legend class="fw-bold">
+              Where do you celebrate the festival?
+            </legend>
+            <select
+              class="form-select"
+              id="regionSelect"
+              name="region"
+              required
+            >
+              <option value="" selected disabled>--Region--</option>
+              <option>Vietnam</option>
+              <option>Taiwan</option>
+              <option>China</option>
+              <option>Malaysia</option>
+              <option>Philippines</option>
+              <option>Japan</option>
+              <option>Singapore</option>
+              <option>Korea</option>
+              <option>Others</option>
+            </select>
+            <div class="invalid-feedback">Please choose your region.</div>
+          </fieldset>
+
+          <!-- Radio input -->
+          <fieldset>
+            <legend class="fw-bold">
+              Have you celebrated Mid-Autumn Festival before? 🌕
+            </legend>
+
+            <!-- first option -->
+            <div class="mb-3 form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="radioYes"
+                name="experience"
+                value="Yes"
+                required
+              />
+              <label class="form-check-label" for="radioYes">Yes</label>
+            </div>
+
+            <!-- second option -->
+            <div class="mb-3 form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="radioNo"
+                name="experience"
+                value="No"
+              />
+              <label class="form-check-label" for="radioNo">No</label>
+            </div>
+
+            <!-- third option -->
+            <div class="mb-3 form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="radioFG"
+                name="experience"
+                value="Only for family gathering"
+              />
+              <label class="form-check-label" for="radioFG"
+                >Only for family gathering</label
+              >
+            </div>
+
+            <div
+              class="invalid-feedback d-block"
+              id="experienceFeedback"
+              aria-live="polite"
+            ></div>
+          </fieldset>
+
+          <!-- Checkbox input -->
+          <fieldset>
+            <legend class="fw-bold">
+              What are your favorite activity to do during the festival?
+            </legend>
+            <!-- first option -->
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="mooncakes"
+                name="activities"
+                value="Eating Mooncakes"
+              />
+              <label class="form-check-label" for="mooncakes"
+                >Eating Mooncakes 🥮</label
+              >
+            </div>
+
+            <!-- second option -->
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="lanterns"
+                name="activities"
+                value="Lantern walk"
+              />
+              <label class="form-check-label" for="lanterns"
+                >Lantern walk 🏮</label
+              >
+            </div>
+
+            <!-- third option -->
+            <div class="form-check form-check-inline mb-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="familyGather"
+                name="activities"
+                value="Family gathering"
+              />
+              <label class="form-check-label" for="familyGather"
+                >Family gathering 👪</label
+              >
+            </div>
+
+            <div
+              class="invalid-feedback d-block"
+              id="activitiesFeedback"
+              aria-live="polite"
+            ></div>
+          </fieldset>
+
+          <!-- Other favorite activities -->
+          <div class="mb-3 fw-bold">
+            <label class="form-label" for="otherActivity"
+              >Other favorite activities:</label
+            >
+            <input
+              class="form-control"
+              id="otherActivity"
+              name="otherActivity"
+              placeholder="E.g. Hanging out with friends"
+              maxlength="60"
+            />
+          </div>
+
+          <!-- Textarea input -->
+          <fieldset>
+            <legend class="fw-bold">
+              Share a memorable memory you had during the festival
+            </legend>
+            <div class="form-floating">
+              <textarea
+                class="form-control"
+                id="textarea"
+                maxlength="300"
+                aria-describedby="charCount"
+              ></textarea>
+              <label for="textarea">Insert your stories here! it's optional though.</label>
+            </div>
+
+            <small
+              id="charCount"
+              class="form-text text-muted"
+              aria-live="polite"
+              >0 / 300</small
+            >
+          </fieldset>
+
+          <!-- Range input -->
+          <div class="mb-3">
+            <label
+              id="rangeMoodlabel"
+              for="rangeMood"
+              class="form-label fw-bold"
+              >How much do you like the festival? (left is lowest, right is
+              highest)</label
+            >
+            <input
+              type="range"
+              class="form-range"
+              id="rangeMood"
+              min="0"
+              max="10"
+              step="1"
+              value="5"
+              aria-labelledby="rangeMoodlabel"
+            />
+            <div>
+              <small
+                >Current:
+                <output id="moodValue" aria-live="polite">5</output>/10</small
+              >
+            </div>
+          </div>
+
+          <!-- submit button -->
+          <div class="mb-3">
+            <button class="btn btn-primary w-100" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="text-light py-5 mt-5" style="position: relative">
+      <div class="container position-relative z-2">
+        <div
+          class="bg-dark bg-opacity-75 p-4 p-md-5 rounded-4 shadow-lg text-center"
+        >
+          <h2 class="mb-3 fw-bold">🌕 Thank You for Visiting us!</h2>
+          <p class="lead mb-4">
+            May your Mid-Autumn Festival be filled with joy, reunion, and
+            glowing lanterns.
+          </p>
+          <div class="d-flex justify-content-center gap-4 fs-4 mb-3">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              class="text-light"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="https://instagram.com" target="_blank" class="text-light"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="https://linkedIn.com" target="_blank" class="text-light"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+          </div>
+          <small class="d-block mt-3 text-secondary">
+            © 2025 Mid-Autumn Festival Project CA2
+          </small>
+        </div>
+      </div>
+      <div
+        style="
+          position: absolute;
+          inset: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 1;
+        "
+      ></div>
+    </footer>
+
+    <!-- nav button to the top of the page -->
+    <a
+      href="#"
+      class="btn btn-sm btn-secondary position-fixed bottom-0 end-0 m-4 rounded-circle btnToTop z-3"
+      aria-label="Back to top"
+    >
+      <i aria-hidden="true" class="bi bi-arrow-up"></i>
+    </a>
+    <script src="../scripts/form.js"></script>
+  </body>
+</html>

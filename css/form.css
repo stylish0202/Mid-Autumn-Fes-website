@@ -1,0 +1,25 @@
+/* pastel blue */
+.card {
+  background-color: rgba(232, 240, 255, 0.9);
+}
+
+.form-control:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+}
+
+.form-card {
+  max-width: 720px;
+}
+
+body {
+  background-image: url(../images/lantern-float-pic-2-min.jpg);
+  /* img attr: Photo by Melanie Magdalena  "https://unsplash.com/@m2creates?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"> <a href="https://unsplash.com/photos/paper-lantern-flying-above-sky-KpBAYMNf9Tw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+#textarea {
+  height: 150px;
+}

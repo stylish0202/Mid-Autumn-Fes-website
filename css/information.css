@@ -1,0 +1,36 @@
+#lanternCanvas {
+  position: fixed; /* This keeps the canvas locked in place on the screen, even when you scroll.*/
+  z-index: -1; /* made sure it stays behind other content*/
+  background: linear-gradient(to bottom, #0a0a1f, #1a1a3d);
+  pointer-events: none; /* so it doesnt block clicks */
+}
+
+#funFactCard {
+  transition: transform 0.3s ease;
+}
+#funFactCard:hover {
+  transform: scale(1.03);
+}
+
+.card-for-modal {
+  background: rgba(255, 255, 255, 0.35);
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.card-for-modal:hover {
+  outline: 2px solid #ffc107; /* warm gold outline */
+}
+
+.card-img-top {
+  aspect-ratio: 16/10;
+  object-fit: cover;
+}
+
+#cultureFacts {
+  text-align: left;
+}
+
+ul li {
+  margin-bottom: 15px;
+}
